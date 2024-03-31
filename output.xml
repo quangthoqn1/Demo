@@ -1,0 +1,192 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.0 (Python 3.12.2 on win32)" generated="2024-03-31T23:34:22.222518" rpa="false" schemaversion="5">
+<suite id="s1" name="Copy PasteTask" source="C:\Users\Admin\Documents\GitHub\Demo\Test\Copy_PasteTask.robot">
+<test id="s1-t1" name="TC01 - Launch to website" line="10">
+<kw name="Launch website" owner="LoginPOM">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2024-03-31T23:34:22.879358" level="INFO">Opening browser 'CHROME' to base url 'https://dev.everfit.io/'.</msg>
+<arg>${URL}</arg>
+<arg>${CHROME}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2024-03-31T23:34:22.878360" elapsed="24.427141"/>
+</kw>
+<kw name="Maximize Browser Window" owner="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" start="2024-03-31T23:34:47.306497" elapsed="0.258309"/>
+</kw>
+<kw name="Set Browser Implicit Wait" owner="SeleniumLibrary">
+<arg>5</arg>
+<doc>Sets the implicit wait value used by Selenium.</doc>
+<status status="PASS" start="2024-03-31T23:34:47.564806" elapsed="0.007973"/>
+</kw>
+<kw name="Set Selenium Speed" owner="SeleniumLibrary">
+<arg>1</arg>
+<doc>Sets the delay that is waited after each Selenium command.</doc>
+<status status="PASS" start="2024-03-31T23:34:47.576137" elapsed="0.004930"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2024-03-31T23:34:50.584846" level="INFO">Slept 3 seconds.</msg>
+<arg>3s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2024-03-31T23:34:47.581067" elapsed="3.004762"/>
+</kw>
+<kw name="Set Environment Variable" owner="OperatingSystem">
+<msg time="2024-03-31T23:34:50.586825" level="INFO">Environment variable 'webdriver.chrome.driver' set to value 'C:UsersAdminDocumentsGitHubDemoChromedriverchromedriver.exe'.</msg>
+<arg>webdriver.chrome.driver</arg>
+<arg>C:\Users\Admin\Documents\GitHub\Demo\Chromedriver\chromedriver.exe</arg>
+<doc>Sets an environment variable to a specified value.</doc>
+<status status="PASS" start="2024-03-31T23:34:50.585855" elapsed="0.000970"/>
+</kw>
+<status status="PASS" start="2024-03-31T23:34:22.875369" elapsed="27.712454"/>
+</kw>
+<status status="PASS" start="2024-03-31T23:34:22.874379" elapsed="27.765650"/>
+</test>
+<test id="s1-t2" name="TC02 - Login to website via username &amp; password" line="15">
+<kw name="InputToUserName" owner="LoginPOM">
+<kw name="InputtextbyPlaceholder" owner="Keyword">
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2024-03-31T23:34:50.744418" level="INFO">Typing text 'hanhle+test@everfit.io' into text field '//input[@placeholder='Your Email Address']'.</msg>
+<arg>//input[@placeholder='${placeholder}']</arg>
+<arg>${data}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2024-03-31T23:34:50.730308" elapsed="5.853162"/>
+</kw>
+<arg>${USERNAME}</arg>
+<arg>hanhle+test@everfit.io</arg>
+<status status="PASS" start="2024-03-31T23:34:50.729369" elapsed="5.854101"/>
+</kw>
+<status status="PASS" start="2024-03-31T23:34:50.728312" elapsed="5.855158"/>
+</kw>
+<kw name="InputToPassWord" owner="LoginPOM">
+<kw name="InputtextbyPlaceholder" owner="Keyword">
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2024-03-31T23:34:56.585463" level="INFO">Typing text 'Test2024' into text field '//input[@placeholder='Password']'.</msg>
+<arg>//input[@placeholder='${placeholder}']</arg>
+<arg>${data}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2024-03-31T23:34:56.585463" elapsed="3.334293"/>
+</kw>
+<arg>${PASSWORD}</arg>
+<arg>Test2024</arg>
+<status status="PASS" start="2024-03-31T23:34:56.584466" elapsed="3.336174"/>
+</kw>
+<status status="PASS" start="2024-03-31T23:34:56.584466" elapsed="3.336174"/>
+</kw>
+<kw name="ClickToLoginButton" owner="LoginPOM">
+<kw name="Clickbuttonbytext" owner="Keyword">
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2024-03-31T23:34:59.924714" level="INFO">Clicking element '//button[@type='submit']'.</msg>
+<arg>//button[@type='${text}']</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-03-31T23:34:59.924714" elapsed="2.484162"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2024-03-31T23:35:05.420959" level="INFO">Slept 3 seconds.</msg>
+<arg>3s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2024-03-31T23:35:02.412476" elapsed="3.008483"/>
+</kw>
+<arg>submit</arg>
+<status status="PASS" start="2024-03-31T23:34:59.923704" elapsed="5.498233"/>
+</kw>
+<kw name="Page Should Contain Image" owner="SeleniumLibrary">
+<msg time="2024-03-31T23:35:15.571319" level="INFO">Current page contains image '//img[@src = "/images/logo.svg"]'.</msg>
+<arg>${VERIFYLOGINSUCCESSFULLY}</arg>
+<doc>Verifies image identified by ``locator`` is found from current page.</doc>
+<status status="PASS" start="2024-03-31T23:35:05.423223" elapsed="10.148096"/>
+</kw>
+<status status="PASS" start="2024-03-31T23:34:59.922642" elapsed="15.649688"/>
+</kw>
+<status status="PASS" start="2024-03-31T23:34:50.712802" elapsed="24.865152"/>
+</test>
+<test id="s1-t3" name="TC03 - Navigate to Task tab of Client Name" line="21">
+<kw name="ClickToClientName" owner="CreateNewGerenalTaskPOM">
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2024-03-31T23:35:15.594636" level="INFO">Clicking element '//a[@href = "/home/client/6569b27da3479a001ee751ad"]'.</msg>
+<arg>${ClientName}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-03-31T23:35:15.592629" elapsed="2.668585"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2024-03-31T23:35:21.263159" level="INFO">Slept 3 seconds.</msg>
+<arg>3s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2024-03-31T23:35:18.261214" elapsed="3.001945"/>
+</kw>
+<status status="PASS" start="2024-03-31T23:35:15.591631" elapsed="5.672532"/>
+</kw>
+<kw name="NavigateToTaskTab" owner="CreateNewGerenalTaskPOM">
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2024-03-31T23:35:21.276411" level="INFO">Clicking element '//a[@href = "/home/client/6569b27da3479a001ee751ad/task"]'.</msg>
+<arg>${NavigateToTaskTab}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-03-31T23:35:21.275460" elapsed="2.453989"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2024-03-31T23:35:26.730551" level="INFO">Slept 3 seconds.</msg>
+<arg>3s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2024-03-31T23:35:23.729449" elapsed="3.001102"/>
+</kw>
+<status status="PASS" start="2024-03-31T23:35:21.273898" elapsed="5.456653"/>
+</kw>
+<status status="PASS" start="2024-03-31T23:35:15.583629" elapsed="11.148881"/>
+</test>
+<test id="s1-t4" name="TC04 - Verify can Copy &amp; Paste Successfully" line="26">
+<kw name="Copy &amp; Paste Task Successfully" owner="Copy&amp;PasteTaskPOM">
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2024-03-31T23:35:26.740330" level="INFO">Clicking element '//div[@class = "sc-kEYyzF cEatI evf-dropdown__trigger"]'.</msg>
+<arg>${3DotButon}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-03-31T23:35:26.739348" elapsed="2.195824"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2024-03-31T23:35:28.937176" level="INFO">Clicking element '//div[text() = "Copy"]'.</msg>
+<arg>${CopyTask}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-03-31T23:35:28.936288" elapsed="2.290249"/>
+</kw>
+<kw name="Mouse Over" owner="SeleniumLibrary">
+<msg time="2024-03-31T23:35:31.226537" level="INFO">Simulating Mouse Over on element '//div[@data-rbd-droppable-id = "03-31-2024;"]'.</msg>
+<arg>${DateOnCalendar}</arg>
+<doc>Simulates hovering the mouse over the element ``locator``.</doc>
+<status status="PASS" start="2024-03-31T23:35:31.226537" elapsed="2.407695"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2024-03-31T23:35:40.637486" level="INFO">Slept 7 seconds.</msg>
+<arg>7s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2024-03-31T23:35:33.635751" elapsed="7.001735"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2024-03-31T23:35:40.640473" level="INFO">Clicking element '//div[text() = "Paste"]/following::div[text() = "Paste"][12]'.</msg>
+<arg>${PasteTask}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-03-31T23:35:40.639591" elapsed="2.412633"/>
+</kw>
+<kw name="Page Should Contain Image" owner="SeleniumLibrary">
+<msg time="2024-03-31T23:35:51.521024" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-3.png"&gt;&lt;img src="selenium-screenshot-3.png" width="800px"&gt;&lt;/a&gt;</msg>
+<msg time="2024-03-31T23:35:51.522159" level="FAIL">Page should have contained image '//img[@src = "/images/task_option_general.svg"]' but did not.</msg>
+<arg>${GeneralLogowhenCreateTask}</arg>
+<doc>Verifies image identified by ``locator`` is found from current page.</doc>
+<status status="FAIL" start="2024-03-31T23:35:43.052224" elapsed="9.780141">Page should have contained image '//img[@src = "/images/task_option_general.svg"]' but did not.</status>
+</kw>
+<status status="FAIL" start="2024-03-31T23:35:26.738334" elapsed="26.094031">Page should have contained image '//img[@src = "/images/task_option_general.svg"]' but did not.</status>
+</kw>
+<status status="FAIL" start="2024-03-31T23:35:26.735391" elapsed="26.097971">Page should have contained image '//img[@src = "/images/task_option_general.svg"]' but did not.</status>
+</test>
+<status status="FAIL" start="2024-03-31T23:34:22.224511" elapsed="90.611844"/>
+</suite>
+<statistics>
+<total>
+<stat pass="3" fail="1" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="3" fail="1" skip="0" id="s1" name="Copy PasteTask">Copy PasteTask</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
